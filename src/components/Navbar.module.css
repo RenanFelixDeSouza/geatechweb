@@ -1,70 +1,107 @@
 .NavBar {
     background-color: #fff;
     display: flex;
-    box-shadow: rgba(255, 255, 255, 0.15) 0px -2px 10px 0;
     justify-content: space-between;
     align-items: center;
-    padding: 1.9em 2em;
-    border-bottom: .2rem solid #000000;
-
-    /* Adicione as seguintes propriedades para fixar o navbar */
+    padding: 2em;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000; /* Um valor alto para garantir que o navbar fique acima de outros elementos */
+    z-index: 1000;
 }
-
-
 
 .brand {
-    color: #4D4E4E;
-    font-size: 1.2em;
-}
-
-.brand span {
-    font-weight: 900;
-    text-transform: uppercase;
-    color:#4D4E4E;
-}
-
-.links_list {  
-    font-family: "Nunito";
+    flex: 1; /* Ocupa o espaço disponível, empurrando o botão para a direita */
     display: flex;
-    list-style: none;
+    align-items: center;
+}
+
+.Text{
+    margin-right: 10rem;
+    margin: right;
+}
+
+.brand img {
+    width: 15em;
+    height: auto;
+}
+
+.menuButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.menuIcon {
+    width: 20px;
+    height: 2px;
+    background-color: #333;
+    position: relative;
+    transition: 0.3s;
+}
+
+.menuIcon:before,
+.menuIcon:after {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background-color: #333;
+    position: absolute;
+    transition: 0.3s;
+}
+
+.menuIcon:before {
+    top: -6px;
+}
+
+.menuIcon:after {
+    top: 6px;
 }
 
 .links_list {
-    
-    margin-right: 5em;
+    font-family: "Nunito";
+    display: flex;
+    list-style: none;
     text-decoration: none;
     font-size: 1rem;
 }
 
 .links_list li a {
+    padding: 0 2em;
+    text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+    .menuButton {
+        display: block;
+        margin-right: 4rem;
+    }
+
+    .links_list {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .links_list li {
+        text-align: left;
+        border-bottom: 1px solid #000; /* Aqui você pode ajustar a cor e espessura da borda conforme necessário */
+        padding-bottom: 6px; /* Opcional: para dar um espaçamento entre o conteúdo e a borda */
     
-    padding: .4em .6em;
-    
-    text-decoration: none;
-}
+    }
 
-.active {
-    color: #ef3d44;
-    list-style: none;
-    text-decoration: none;
+    .links_list li a {
+        padding: 1em 2em;
+        display: block;
+    }
 
-}
-.notActive {
-    color: #4D4E4E;
-    list-style: none;
-    text-decoration: none;
-
-}
-
-.active2 {
-    color: #ef3d44;
-}
-
-.Text {
-    text-align: center;
-    color: #ef3d44;
+    .showMenu {
+        display: flex !important;
+    }
 }

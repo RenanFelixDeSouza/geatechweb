@@ -1,16 +1,22 @@
 import React, { useState } from "react";
+import logoMarca from '../img/logomarca-site.png';
 import { NavLink } from "react-router-dom";
 import styles from './Navbar.module.css';
 
 const NavBar = () => {
     const [selectedNavItem, setSelectedNavItem] = useState(null);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const handleNavItemClick = (navItem) => {
         if (selectedNavItem === navItem) {
-            setSelectedNavItem(null); // Deselect the item if it's clicked again
+            setSelectedNavItem(null);
         } else {
             setSelectedNavItem(navItem);
         }
+    };
+
+    const handleMenuToggle = () => {
+        setIsMenuOpen(!isMenuOpen);
     };
 
     const renderText = (navItem) => {
@@ -27,10 +33,10 @@ const NavBar = () => {
     return (
         <nav className={styles.NavBar}>
             <NavLink to="/home" className={styles.brand}>
-                <span>Geatech</span>
+                <img src={logoMarca} alt="geatech" className={styles.logoMarca} />
             </NavLink>
 
-            <ul className={styles.links_list}>
+            <ul className={`${styles.links_list} ${isMenuOpen ? styles.showMenu : ""}`}>
                 <li>
                     <NavLink
                         to="/home"
@@ -72,6 +78,9 @@ const NavBar = () => {
                     </NavLink>
                 </li>
             </ul>
+            <button className={styles.menuButton} onClick={handleMenuToggle}>
+                <div className={styles.menuIcon}></div>
+            </button>
         </nav>
     );
 };

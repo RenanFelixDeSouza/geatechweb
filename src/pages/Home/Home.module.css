@@ -1,42 +1,47 @@
-
 .box {
   position: relative;
   padding: 10.5rem;
   background-color: #3D59FA;
   margin: 20px auto;
-  display: flex; /* Utilize flexbox para centralizar conteúdo vertical e horizontalmente */
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
+  display: flex;
+  flex-direction: column; /* Adicionado para alinhar o conteúdo verticalmente */
+  justify-content: center;
+  align-items: center;
 }
 
-.boxText h1{
-margin-right: 40%;
-margin-left: 16%;
-font-size: 50px;
-font-weight: 600px;
-}
-
-/* Text styles within the box */
 .boxText {
   color: white;
   font-size: 30px;
   padding: 6.5rem;
-  text-align: center;
+  margin-left: -10rem;
+  text-align: left;
+}
+
+.boxText h1 {
+  margin-right: 40%;
+  margin-left: 16%;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.boxText p {
+  font-size: 16px;
+  margin-left: 16%;
 }
 
 .boxText button {
   margin-top: 10px;
   margin-left: 16%;
-  padding: 15px 30px; /* Ajuste os valores conforme necessário */
-  font-size: 18px; /* Ajuste o tamanho da fonte conforme necessário */
+  padding: 15px 30px;
+  font-size: 18px;
   background-color: #FFBB00;
   color: white;
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
   border: 1px solid transparent;
-    position: relative;
-    outline: none;
-    cursor: pointer;
+  position: relative;
+  outline: none;
+  cursor: pointer;
 }
 
 .boxText button:hover {
@@ -49,97 +54,77 @@ font-weight: 600px;
   position: absolute;
   top: 12rem;
   left: 59.4%;
-  width: 63rem; /* Ajuste conforme necessário */
+  width: 63rem;
   height: auto;
 }
 
-.boxText p {
-  font-size: 16px;
-  margin-left: 16%;
-}
-
-
-
-
-/* Larger screens (monitors) */
-@media (min-width: 1024px) {
-  .boxText{
-    margin-left: -10rem;
-    text-align: left;
-  }
-}
-
-/* Tablets and smaller screens */
-@media (max-width: 1023px) {
+/* Larger screens (tablet) */
+@media (max-width: 1200px) {
   .box {
-    position: relative;
-    padding: 6rem;
-    background-color: #3D59FA;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .box img {
-    position: relative;
-    width: 90%;
-    margin-right: 110%;
-    margin-bottom: 13.5rem;
+    padding: 5rem; /* Reduzir o padding para economizar espaço */
+    min-height: auto; /* Remover a altura mínima para o conteúdo se ajustar */
   }
   
   .boxText {
-    padding: 2rem;
-    margin-top: 5rem;
-    margin-bottom: -8rem;
-    position: relative;
-    text-align: center;
+    font-size: 24px; /* Reduzir o tamanho da fonte para melhorar a legibilidade */
+    padding: 3rem; /* Reduzir o padding para economizar espaço */
+    margin-left: 0;
+    margin-top: 3rem;
+    text-align: center; /* Centralizar o texto novamente */
   }
-
-  .boxText h1, .boxText p {
-    font-size: 2.2rem;
-    margin: 0;
+  
+  .boxText h1 {
+    font-size: 37px; /* Reduzir o tamanho da fonte para melhorar a legibilidade */
+    margin-right: 0; /* Ajustar as margens para melhorar o espaçamento */
+    margin-left: 0; /* Ajustar as margens para melhorar o espaçamento */
   }
-
-  .boxText button {
-    font-size: 18px;
-    margin-top: 2rem;
-  }
-
-
-
+  
   .boxText p {
-    font-size: 17px;
-    margin-bottom: 1rem;
+    font-size: 14px; /* Reduzir o tamanho da fonte para melhorar a legibilidade */
+    margin-left: 0; /* Ajustar as margens para melhorar o espaçamento */
+    margin-right: 0; /* Ajustar as margens para melhorar o espaçamento */
+  }
+  
+  .boxText button {
+    font-size: 16px; /* Reduzir o tamanho da fonte para melhorar a legibilidade */
+    margin-top: 10px;
+    margin-left: auto; /* Centralizar o botão horizontalmente */
+    margin-right: auto; /* Centralizar o botão horizontalmente */
+  }
+  
+  .box img {
+    display: none; /* Esconder a imagem para economizar espaço */
   }
 }
 
-
-
-
-/* Mobile devices */
 @media (max-width: 767px) {
-
+  .boxText {
+    padding: 3rem;
+    margin: 3rem auto;
+    text-align: center;
+  }
+  
   .boxText h1 {
-    font-size: 30px;
-    margin: 0;
+    font-size: 25px;
+    margin: 0 auto;
+    text-align: center;
   }
-
+  
   .boxText p {
-    font-size: 1rem;
+    font-size: 14px;
+    margin: 0 auto;
+    text-align: center;
   }
-
-
-  .box img {
-    position: relative;
-    width: 120%;
-    margin-right: 120%;
-    margin-top: -5rem;
-  }
-
+  
   .boxText button {
-    padding: 10px 20px;
-    font-size: 20px;
+    font-size: 16px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .box img {
+    display: none;
   }
 }

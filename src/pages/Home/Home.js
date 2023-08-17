@@ -10,8 +10,8 @@ const Home = () => {
                     <p>NF-e, CT-e, MDF-e.</p>
                     <h1>Produtor Rural, emita nota fiscal eletrônica com o sistema da Geatech</h1>
                     <button className={styles.active}>FALE CONOSCO</button>
+                    <img src={fazendeiro} alt="Imagem lateral" className={styles.fazendeiro} />
                 </div>
-                <img src={fazendeiro} alt="Imagem lateral" className={styles.fazendeiro} />
             </div>
         </div>
     );
