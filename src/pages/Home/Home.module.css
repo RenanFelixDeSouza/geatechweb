@@ -1,0 +1,145 @@
+
+.box {
+  position: relative;
+  padding: 10.5rem;
+  background-color: #3D59FA;
+  margin: 20px auto;
+  display: flex; /* Utilize flexbox para centralizar conteúdo vertical e horizontalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+.boxText h1{
+margin-right: 40%;
+margin-left: 16%;
+font-size: 50px;
+font-weight: 600px;
+}
+
+/* Text styles within the box */
+.boxText {
+  color: white;
+  font-size: 30px;
+  padding: 6.5rem;
+  text-align: center;
+}
+
+.boxText button {
+  margin-top: 10px;
+  margin-left: 16%;
+  padding: 15px 30px; /* Ajuste os valores conforme necessário */
+  font-size: 18px; /* Ajuste o tamanho da fonte conforme necessário */
+  background-color: #FFBB00;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  border: 1px solid transparent;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+}
+
+.boxText button:hover {
+  background-color: #3D59FA;
+  border: none;
+  margin-bottom: 0.1rem;
+}
+
+.box img {
+  position: absolute;
+  top: 12rem;
+  left: 59.4%;
+  width: 63rem; /* Ajuste conforme necessário */
+  height: auto;
+}
+
+.boxText p {
+  font-size: 16px;
+  margin-left: 16%;
+}
+
+
+
+
+/* Larger screens (monitors) */
+@media (min-width: 1024px) {
+  .boxText{
+    margin-left: -10rem;
+    text-align: left;
+  }
+}
+
+/* Tablets and smaller screens */
+@media (max-width: 1023px) {
+  .box {
+    position: relative;
+    padding: 6rem;
+    background-color: #3D59FA;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box img {
+    position: relative;
+    width: 90%;
+    margin-right: 110%;
+    margin-bottom: 13.5rem;
+  }
+  
+  .boxText {
+    padding: 2rem;
+    margin-top: 5rem;
+    margin-bottom: -8rem;
+    position: relative;
+    text-align: center;
+  }
+
+  .boxText h1, .boxText p {
+    font-size: 2.2rem;
+    margin: 0;
+  }
+
+  .boxText button {
+    font-size: 18px;
+    margin-top: 2rem;
+  }
+
+
+
+  .boxText p {
+    font-size: 17px;
+    margin-bottom: 1rem;
+  }
+}
+
+
+
+
+/* Mobile devices */
+@media (max-width: 767px) {
+
+  .boxText h1 {
+    font-size: 30px;
+    margin: 0;
+  }
+
+  .boxText p {
+    font-size: 1rem;
+  }
+
+
+  .box img {
+    position: relative;
+    width: 120%;
+    margin-right: 120%;
+    margin-top: -5rem;
+  }
+
+  .boxText button {
+    padding: 10px 20px;
+    font-size: 20px;
+  }
+}
