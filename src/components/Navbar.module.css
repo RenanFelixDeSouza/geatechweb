@@ -3,11 +3,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2em;
+    padding: 1.5em;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+
 }
 
 .brand {
@@ -16,60 +17,99 @@
     align-items: center;
 }
 
-.Text{
-    margin-right: 10rem;
-    margin: right;
-}
+
 
 .brand img {
+    margin-left: 5.5rem;
     width: 15em;
     height: auto;
 }
 
 .menuButton {
+    display: block;
     background: none;
-    border: none;
+    border: 1px line #000; 
     cursor: pointer;
-    padding: 1rem;
-}
-
-.menuIcon {
-    width: 20px;
-    height: 2px;
-    background-color: #333;
+    width: 55px;
+    height: 50px;
     position: relative;
     transition: 0.3s;
 }
 
-.menuIcon:before,
-.menuIcon:after {
+
+.menuIcon1 {
+    width: 15px;
+    position: relative;
+}
+.menuIcon2 {
+    width: 15px;
+    position: relative;
+}
+.menuIcon3 {
+    width: 15px;
+    position: relative;
+}
+
+.social {
+    margin-left: 0.4rem;
+    padding: 0.1rem;
+    color: black;
+}
+
+.social:hover {
+    color: red;
+}
+
+.menuIcon1:after {
     content: '';
-    width: 20px;
+    width: 25px;
     height: 2px;
     background-color: #333;
     position: absolute;
     transition: 0.3s;
-}
-
-.menuIcon:before {
-    top: -6px;
-}
-
-.menuIcon:after {
-    top: 6px;
-}
+  }
+.menuIcon2:after {
+    content: '';
+    width: 25px;
+    margin-top: 0.5rem;
+    height: 2px;
+    background-color: #333;
+    position: absolute;
+    transition: 0.3s;
+  }
+.menuIcon3:after {
+    content: '';
+    width: 25px;
+    margin-top: -0.5rem;
+    height: 2px;
+    background-color: #333;
+    position: absolute;
+    transition: 0.3s;
+  }
 
 .links_list {
     font-family: "Nunito";
     display: flex;
+    margin-right: 7.5rem;
+    padding: 0 2em;
     list-style: none;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
 .links_list li a {
-    padding: 0 2em;
-    text-decoration: none;
+    text-decoration: solid;
+    margin-left: 1.8rem;
+    color: black;
+    margin-right: 0.3rem;
+}
+
+.links_list  a:hover {
+    color: red;
+}
+.menuButton {
+    display: none;
 }
 
 @media (max-width: 1200px) {
@@ -93,15 +133,49 @@
         text-align: left;
         border-bottom: 1px solid #000; /* Aqui você pode ajustar a cor e espessura da borda conforme necessário */
         padding-bottom: 6px; /* Opcional: para dar um espaçamento entre o conteúdo e a borda */
-    
     }
 
     .links_list li a {
         padding: 1em 2em;
         display: block;
+        margin-left: 2rem;
     }
 
     .showMenu {
         display: flex !important;
     }
+
+    .brand img {
+       margin-left: 0;
+    }
+    .menuIcon1Active{
+        transform: rotate(45deg); /* Aplica uma rotação de 45 graus ao elemento */
+        transition: transform 0.3s ease; 
+        bottom: 20%;
+        left: 10%;
+    }
+    .menuIcon2Active{
+        transform: rotate(-45deg); /* Aplica uma rotação de 45 graus ao elemento */
+        transition: transform 0.3s ease; 
+        right: 10%;
+        top: 5%;
+        
+    }
+    .menuIcon3Active{
+        opacity: 0;
+    }
+
+    .menuIcon1Back{
+        transition: transform 0.3s ease; 
+        bottom: 20%;
+    }
+    .menuIcon2Back{
+        transition: transform 0.3s ease; 
+        
+    }
+    .menuIcon3Back{
+        opacity: 100%;
+        top: 15%;
+    }
+
 }

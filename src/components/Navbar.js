@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logoMarca from '../img/logomarca-site.png';
 import { NavLink } from "react-router-dom";
+import { RiInstagramLine, RiFacebookBoxFill } from "react-icons/ri";
 import styles from './Navbar.module.css';
 
 const NavBar = () => {
@@ -18,6 +19,8 @@ const NavBar = () => {
     const handleMenuToggle = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+
+
 
     const renderText = (navItem) => {
         if (selectedNavItem === navItem) {
@@ -77,9 +80,21 @@ const NavBar = () => {
                         {renderText("Sobre nós")}
                     </NavLink>
                 </li>
+                <NavLink
+                    to="https://www.instagram.com/GeatechSolucoes/"
+                    target="_blank" className={styles.social}>
+                    <RiInstagramLine />
+                </NavLink>
+                <NavLink
+                    to="https://www.instagram.com/GeatechSolucoes/"
+                    target="_blank" className={styles.social}>
+                    <RiFacebookBoxFill />
+                </NavLink>
             </ul>
             <button className={styles.menuButton} onClick={handleMenuToggle}>
-                <div className={styles.menuIcon}></div>
+                <div className={`${styles.menuIcon1} ${isMenuOpen ? styles.menuIcon1Active : styles.menuIcon1Back}`} onClick={handleMenuToggle}></div>
+                <div className={`${styles.menuIcon2} ${isMenuOpen ? styles.menuIcon2Active : styles.menuIcon2Back}`} onClick={handleMenuToggle}></div>
+                <div className={`${styles.menuIcon3} ${isMenuOpen ? styles.menuIcon3Active : styles.menuIcon3Back}`} onClick={handleMenuToggle}></div>
             </button>
         </nav>
     );
