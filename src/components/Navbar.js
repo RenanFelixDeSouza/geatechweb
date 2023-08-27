@@ -5,32 +5,25 @@ import { RiInstagramLine, RiFacebookBoxFill } from "react-icons/ri";
 import styles from './Navbar.module.css';
 
 const NavBar = () => {
-    const [selectedNavItem, setSelectedNavItem] = useState(null);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    const handleNavItemClick = (navItem) => {
-        if (selectedNavItem === navItem) {
-            setSelectedNavItem(null);
-        } else {
-            setSelectedNavItem(navItem);
-        }
-    };
+    const [activeItem, setActiveItem] = useState(null);
 
     const handleMenuToggle = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-
-
-    const renderText = (navItem) => {
-        if (selectedNavItem === navItem) {
-            return (
-                <div className={styles.Text}>
-                    °°°
-                </div>
-            );
+    const handleNavItemClick = (item) => {
+        // Se o mesmo item estiver ativo, não faça nada
+        if (activeItem === item) {
+            return;
+        } else {
+            // Caso contrário, ative o novo item
+            setActiveItem(item);
         }
-        return null;
+    };
+
+    const isItemActive = (item) => {
+        return activeItem === item;
     };
 
     return (
@@ -43,54 +36,62 @@ const NavBar = () => {
                 <li>
                     <NavLink
                         to="/home"
-                        onClick={() => handleNavItemClick("Home")}
-                        className={({ isActive }) => (isActive ? styles.active : styles.notActive)}
+                        onClick={() => handleNavItemClick('solucoes')}
+                        className={`${isItemActive('solucoes') ? styles.active : styles.notActive}`}
                     >
-                        Soluções
-                        {renderText("Home")}
+                        <div className={styles.Text}>
+                            Soluções <br />
+                            {isItemActive('solucoes') && "°°°"}
+                        </div>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink
                         to="/aprendizado"
-                        onClick={() => handleNavItemClick("Jogos e video aula")}
-                        className={({ isActive }) => (isActive ? styles.active : styles.notActive)}
+                        onClick={() => handleNavItemClick('sobre')}
+                        className={`${isItemActive('sobre') ? styles.active : styles.notActive}`}
                     >
-                        Sobre a Geatech
-                        {renderText("Jogos e video aula")}
+                        <div className={styles.Text}>
+                            Sobre a Geatech <br />
+                            {isItemActive('sobre') && "°°°"}
+                        </div>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink
                         to="/Dashboard"
-                        onClick={() => handleNavItemClick("Dashboard")}
-                        className={({ isActive }) => (isActive ? styles.active : styles.notActive)}
+                        onClick={() => handleNavItemClick('portal')}
+                        className={`${isItemActive('portal') ? styles.active : styles.notActive}`}
                     >
-                        Portal do Cliente
-                        {renderText("Dashboard")}
+                        <div className={styles.Text}>
+                            Portal do Cliente <br />
+                            {isItemActive('portal') && "°°°"}
+                        </div>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink
                         to="/about"
-                        onClick={() => handleNavItemClick("Sobre nós")}
-                        className={({ isActive }) => (isActive ? styles.active : styles.notActive)}
+                        onClick={() => handleNavItemClick("contato")}
+                        className={`${isItemActive('contato') ? styles.active : styles.notActive}`}
                     >
-                        Fale Conosco
-                        {renderText("Sobre nós")}
+                        <div className={styles.Text}>
+                            Fale Conosco <br />
+                            {isItemActive('contato') && "°°°"}
+                        </div>
                     </NavLink>
                 </li>
-                <NavLink
-                    to="https://www.instagram.com/GeatechSolucoes/"
-                    target="_blank" className={styles.social}>
-                    <RiInstagramLine />
-                </NavLink>
-                <NavLink
-                    to="https://www.instagram.com/GeatechSolucoes/"
-                    target="_blank" className={styles.social}>
-                    <RiFacebookBoxFill />
-                </NavLink>
             </ul>
+            <NavLink
+                to="https://www.instagram.com/GeatechSolucoes/"
+                target="_blank" className={styles.social}>
+                <RiInstagramLine />
+            </NavLink>
+            <NavLink
+                to="https://www.instagram.com/GeatechSolucoes/"
+                target="_blank" className={styles.social}>
+                <RiFacebookBoxFill />
+            </NavLink>
             <button className={styles.menuButton} onClick={handleMenuToggle}>
                 <div className={`${styles.menuIcon1} ${isMenuOpen ? styles.menuIcon1Active : styles.menuIcon1Back}`} onClick={handleMenuToggle}></div>
                 <div className={`${styles.menuIcon2} ${isMenuOpen ? styles.menuIcon2Active : styles.menuIcon2Back}`} onClick={handleMenuToggle}></div>

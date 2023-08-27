@@ -1,14 +1,25 @@
+* {
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    border-width: 0px;
+    outline-width: 0px;
+  }
+
 .NavBar {
-    background-color: #fff;
     display: flex;
+    background-color: #fff;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5em;
+    padding: 1em;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+}
 
+.Text {
+    text-align: center;
 }
 
 .brand {
@@ -17,43 +28,46 @@
     align-items: center;
 }
 
-
-
 .brand img {
-    margin-left: 5.5rem;
+    margin-left: 1vh;
+    margin-bottom: 1vh;
     width: 15em;
     height: auto;
 }
 
-.menuButton {
-    display: block;
-    background: none;
-    border: 1px line #000; 
-    cursor: pointer;
-    width: 55px;
-    height: 50px;
-    position: relative;
-    transition: 0.3s;
-}
-
-
 .menuIcon1 {
     width: 15px;
     position: relative;
+    right: 0.2rem;
 }
+
 .menuIcon2 {
     width: 15px;
     position: relative;
+    right: 0.2rem;
+
 }
+
+
+.selectedIndicator {
+    font-size: 1em;
+    color: red;
+}
+
 .menuIcon3 {
     width: 15px;
     position: relative;
+    right: 0.2rem;
+
 }
 
 .social {
-    margin-left: 0.4rem;
-    padding: 0.1rem;
-    color: black;
+    display: flex;
+    margin-left: -8%;
+    margin-right: 9%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
 }
 
 .social:hover {
@@ -64,6 +78,7 @@
     content: '';
     width: 25px;
     height: 2px;
+    
     background-color: #333;
     position: absolute;
     transition: 0.3s;
@@ -71,7 +86,7 @@
 .menuIcon2:after {
     content: '';
     width: 25px;
-    margin-top: 0.5rem;
+    margin-top: 0.3rem;
     height: 2px;
     background-color: #333;
     position: absolute;
@@ -87,22 +102,24 @@
     transition: 0.3s;
   }
 
-.links_list {
-    font-family: "Nunito";
-    display: flex;
-    margin-right: 7.5rem;
-    padding: 0 2em;
-    list-style: none;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: bold;
-}
+  ul {
+    display: table;
+    width: 100%;
+    text-align: right; /* Alinha todo o conteúdo à direita */
+    margin-right: 20vh;
+    
 
-.links_list li a {
-    text-decoration: solid;
-    margin-left: 1.8rem;
-    color: black;
-    margin-right: 0.3rem;
+  }
+
+  ul li {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    padding: 2px 10px; 
+    display: inline-block; /* visual do link */ 
+
+}
+.links_list a{
+    text-decoration: none; 
+
 }
 
 .links_list  a:hover {
@@ -112,10 +129,53 @@
     display: none;
 }
 
-@media (max-width: 1200px) {
-    .menuButton {
+
+
+@media screen and (max-width: 1200px) {
+    
+
+    .NavBar {
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2.5em;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .social {
+        display: flex;
+        margin-left: -19%;
+        margin-bottom: -10vh;
+        margin-right: 20%;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .brand img {
         display: block;
-        margin-right: 4rem;
+        width: 15em;
+        max-width: 100%;
+        height: auto;
+        width: 15em;        
+    }
+    
+
+
+    .menuButton {    
+        display: block;
+        background: none;
+        border: 1px line #000; 
+        cursor: pointer;
+        right: 4rem;
+        width: 3rem;
+        height: 3rem;
+        position: relative;
+        transition: 0.3s;
     }
 
     .links_list {
@@ -131,6 +191,7 @@
 
     .links_list li {
         text-align: left;
+        text-decoration:none;
         border-bottom: 1px solid #000; /* Aqui você pode ajustar a cor e espessura da borda conforme necessário */
         padding-bottom: 6px; /* Opcional: para dar um espaçamento entre o conteúdo e a borda */
     }
@@ -145,9 +206,7 @@
         display: flex !important;
     }
 
-    .brand img {
-       margin-left: 0;
-    }
+
     .menuIcon1Active{
         transform: rotate(45deg); /* Aplica uma rotação de 45 graus ao elemento */
         transition: transform 0.3s ease; 
