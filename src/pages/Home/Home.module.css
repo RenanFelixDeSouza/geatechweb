@@ -56,28 +56,45 @@
 
 /* Larger screens (tablet) */
 @media (max-width: 1200px) {
-  .box {
-    padding: 0; /* Reduzir o padding para economizar espaço */
-    min-height: auto; /* Remover a altura mínima para o conteúdo se ajustar */
-  }
-  
-  .boxText {
-    font-size: 24px; /* Reduzir o tamanho da fonte para melhorar a legibilidade */
-    padding: 3rem; /* Reduzir o padding para economizar espaço */
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2rem; 
-    text-align: center;
 
-  }
+    .box {
+      position: fixed;
+      left: 0;
+      width: 100%; /* Ocupar toda a largura disponível */
+      height: 100%; /* Ocupar toda a altura disponível */
+      display: flex;
+      flex-direction: column; /* Alinhar o conteúdo verticalmente */
+      justify-content: flex-start; /* Alinhar o conteúdo no topo */
+      align-items: center;
+      padding: 2rem; /* Ajustar o preenchimento conforme necessário */
+    }
   
-  .boxText h1 {
-    position: relative;
-    font-size: 37px; /* Reduzir o tamanho da fonte para melhorar a legibilidade */
-  }
+    .boxText {
+      padding: 1rem;
+      margin: 0 auto; /* Centralizar horizontalmente */
+      text-align: center;
+      left: 10%;
+      width: 75%; /* Preencher toda a largura disponível */
+      height: auto;
+    }
   
-  .boxText p {
+    .boxText h1{
+      margin-top: 5%;
+      font-size: 37px; /* Reduzir o tamanho da fonte para melhorar a legibilidade */
+      width: 100%; /* Preencher toda a largura disponível */
+
+    }
+    .boxText h1,
+    .boxText p,
+    .boxText button {
+        height: auto;
+    }
+    
+  
+  .boxText p {    
     font-size: 14px; /* Reduzir o tamanho da fonte para melhorar a legibilidade */
+    margin-top: 15%;
+    width: 100%; /* Preencher toda a largura disponível */
   }
   
   .boxText button {
@@ -85,53 +102,65 @@
   }
   
   .box img {
-    position: relative;
-    top: 3%;
-    left: 0%;
+    margin-top: 25%;
+    left: 11%;
+    width: 75%; /* Preencher toda a largura disponível */
     height: auto;
   }
 }
 
 @media (max-width: 820px) {
+
   .box {
-    position: absolute;
-    padding: 0;
-    background-color: #3D59FA;
+    position: fixed;
+    left: 0;
+    width: 100%; /* Ocupar toda a largura disponível */
+    height: 100%; /* Ocupar toda a altura disponível */
     display: flex;
-    flex-direction: column; /* Adicionado para alinhar o conteúdo verticalmente */
-    justify-content: center;
+    flex-direction: column; /* Alinhar o conteúdo verticalmente */
+    justify-content: flex-start; /* Alinhar o conteúdo no topo */
     align-items: center;
+    padding: 2rem; /* Ajustar o preenchimento conforme necessário */
   }
 
   .boxText {
-    padding: 1rem; /* Reduzir o padding para economizar espaço */
-    margin-top: 3rem;
-    margin-left: 25%;
-    margin-right: 50%;
-    text-align: center; /* Centralizar o texto novamente */
+    padding: 1rem;
+    margin: 0 auto; /* Centralizar horizontalmente */
+    text-align: center;
+    left: 10%;
+    width: 75%; /* Preencher toda a largura disponível */
+    height: auto;
   }
 
-  .boxText h1 {
-    position: relative;
-    font-size: 26px; /* Reduzir o tamanho da fonte para melhorar a legibilidade */
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: 0;
-
-  }
-  
-  .boxText p {
-    font-size: 14px; /* Reduzir o tamanho da fonte para melhorar a legibilidade */
-  }
-  
-  .boxText button {
-    font-size: 16px; /* Reduzir o tamanho da fonte para melhorar a legibilidade */
-    margin-top: 10px;
-  }
-  
-  .boxText img {
+  .boxText h1{
     margin-top: 5%;
-    left: 0%;
-   }
+    font-size: 37px; /* Reduzir o tamanho da fonte para melhorar a legibilidade */
+    width: 100%; /* Preencher toda a largura disponível */
+
+  }
+  .boxText h1,
+  .boxText p,
+  .boxText button {
+      height: auto;
+  }
   
+
+.boxText p {    
+  font-size: 14px; /* Reduzir o tamanho da fonte para melhorar a legibilidade */
+  margin-top: 15%;
+  width: 100%; /* Preencher toda a largura disponível */
+}
+
+.boxText button {
+  font-size: 16px; /* Reduzir o tamanho da fonte para melhorar a legibilidade */
+}
+
+.box img {
+  margin-top: 25%;
+  opacity: 25%;
+  left: 11%;
+  width: 75%; /* Preencher toda a largura disponível */
+  height: auto;
+}
+
 }

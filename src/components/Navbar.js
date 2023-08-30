@@ -28,7 +28,7 @@ const NavBar = () => {
 
     return (
         <nav className={styles.NavBar}>
-            <NavLink to="/home" className={styles.brand}>
+            <NavLink to="/" className={styles.brand}>
                 <img src={logoMarca} alt="geatech" className={styles.logoMarca} />
             </NavLink>
 
@@ -41,7 +41,9 @@ const NavBar = () => {
                     >
                         <div className={styles.Text}>
                             Soluções <br />
-                            {isItemActive('solucoes') && "°°°"}
+                            <div className={`${isItemActive('solucoes') ? styles.activeIndication : styles.hiddenIndication}`}>
+                                °°°
+                            </div>
                         </div>
                     </NavLink>
                 </li>
@@ -53,7 +55,9 @@ const NavBar = () => {
                     >
                         <div className={styles.Text}>
                             Sobre a Geatech <br />
-                            {isItemActive('sobre') && "°°°"}
+                            <div className={`${isItemActive('sobre') ? styles.activeIndication : styles.hiddenIndication}`}>
+                                °°°
+                            </div>
                         </div>
                     </NavLink>
                 </li>
@@ -65,7 +69,9 @@ const NavBar = () => {
                     >
                         <div className={styles.Text}>
                             Portal do Cliente <br />
-                            {isItemActive('portal') && "°°°"}
+                            <div className={`${isItemActive('portal') ? styles.activeIndication : styles.hiddenIndication}`}>
+                                °°°
+                            </div>
                         </div>
                     </NavLink>
                 </li>
@@ -77,10 +83,13 @@ const NavBar = () => {
                     >
                         <div className={styles.Text}>
                             Fale Conosco <br />
-                            {isItemActive('contato') && "°°°"}
+                            <div className={`${isItemActive('contato') ? styles.activeIndication : styles.hiddenIndication}`}>
+                                °°°
+                            </div>
                         </div>
                     </NavLink>
                 </li>
+
             </ul>
             <NavLink
                 to="https://www.instagram.com/GeatechSolucoes/"
