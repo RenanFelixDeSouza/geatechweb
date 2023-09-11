@@ -1,5 +1,5 @@
-Refatoração do antigo site da Geatech para tecnologias mais atuais utilizando
-React.JS
+##Refatoração do antigo site da Geatech para tecnologias mais atuais utilizando
+React.JS##
 Usando como base o site https://novo.geatechsolucoes.com.br . O objetivo deste projeto é criar uma versão interativa e responsiva do site original, mantendo o design e as funcionalidades principais.
 
 Pré-requisitos
