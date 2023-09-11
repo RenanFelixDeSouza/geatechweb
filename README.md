@@ -2,7 +2,7 @@
 
 Usando como base o site https://novo.geatechsolucoes.com.br . O objetivo deste projeto é criar uma versão interativa e responsiva do site original, mantendo o design e as funcionalidades principais.
 
-![site da Geatech](https://github.com/github.png)
+![site da Geatech](https://github.com/RenanFelixDeSouza/geatechweb/blob/main/src/img/geatech%20web.png)
 
 Pré-requisitos
 Antes de iniciar, certifique-se de que você tenha as seguintes ferramentas instaladas em seu sistema:
